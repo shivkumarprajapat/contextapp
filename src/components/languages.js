@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import InputHook from "./inputHook";
 export default function Languages() {
@@ -14,23 +14,27 @@ export default function Languages() {
   // Custom Hooks
   const [name, setName, clearName] = InputHook("");
   const [email, setEmail, clearEmail] = InputHook("");
+  const [count, setCount] = useState(0);
   // ./Custom Hooks
 
   const addLanguage = e => {
     e.preventDefault();
-    setComputerLanguages(
-      [...computerLanguages,
-      {
-        id: uuidv4(),
-        name: name, email: email
-      }
+    setComputerLanguages([
+      ...computerLanguages,
+      {id: uuidv4(),
+        name: name, email: email}
       ]);
-    clearName("")
-    clearEmail("")
+    clearName();
+    clearEmail();
   };
+
+  useEffect(() => {
+    console.log("use Effect is run")
+  },[count])
 
   return (
     <React.Fragment>
+      <h1>{count}</h1>
       <table className="table">
         <thead>
           <tr>
@@ -69,6 +73,14 @@ export default function Languages() {
             type="submit"
             className="btn btn-primary"
             value="Add Language"
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="submit"
+            className="btn btn-info"
+            value="Count"
+            onClick={()=>setCount(count + 1)}
           />
         </div>
       </form>
