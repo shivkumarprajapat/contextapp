@@ -15,7 +15,7 @@ class ShopContextProvider extends React.Component {
     }
     render() {
         return (
-            <ShopContext.Provider value={{ ...this.state.products }}>
+            <ShopContext.Provider value={{ ...this.state }}>
                 {this.props.children}
             </ShopContext.Provider>
         )
