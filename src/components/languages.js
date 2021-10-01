@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import InputHook from "./inputHook";
 export default function Languages() {
@@ -21,16 +21,18 @@ export default function Languages() {
     e.preventDefault();
     setComputerLanguages([
       ...computerLanguages,
-      {id: uuidv4(),
-        name: name, email: email}
-      ]);
+      {
+        id: uuidv4(),
+        name: name, email: email
+      }
+    ]);
     clearName();
     clearEmail();
   };
 
   useEffect(() => {
     console.log("use Effect is run")
-  },[count])
+  }, [count])
 
   return (
     <React.Fragment>
@@ -80,7 +82,7 @@ export default function Languages() {
             type="submit"
             className="btn btn-info"
             value="Count"
-            onClick={()=>setCount(count + 1)}
+            onClick={() => setCount(count + 1)}
           />
         </div>
       </form>
