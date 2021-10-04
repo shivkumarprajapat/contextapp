@@ -1,15 +1,22 @@
-import React, { createContext} from 'react'
-import products from '../data/products';
-
+import React, { createContext } from 'react'
+import products from '../data/products'
 export const ShopContext = createContext();
 
-const ShopContextProvider =(props)=>{
-    let state ={products}
+class ShopContextProvider extends React.Component {
+    state = {
+        products
+
+    }
+    doSomthing=()=>{
+        return "Hello dosomthing"
+    }
+    render() {
         return (
-            <ShopContext.Provider value={{ ...state}}>
-                {props.children}
+            <ShopContext.Provider value={{ ...this.state, doSome: this.doSomthing}}>
+                {this.props.children}
             </ShopContext.Provider>
         )
+    }
 }
 
 export default ShopContextProvider

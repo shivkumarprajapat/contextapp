@@ -1,14 +1,13 @@
 import React from "react";
 import { ShopContext } from "../context/ShopContext";
 
-class ShopProducts extends React.Component {
-  static contextType = ShopContext;
+const ShopProducts = ()=> {
 
-  render() {
     return (
       <ShopContext.Consumer>
         {(contextData) => {
-          const { products } = this.context;
+          const { products,doSome } = contextData;
+          console.log(doSome())
           return (
             <div>
               <h1>All Products</h1>
@@ -23,7 +22,6 @@ class ShopProducts extends React.Component {
         }}
       </ShopContext.Consumer>
     );
-  }
 }
 
 export default ShopProducts;
