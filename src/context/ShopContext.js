@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
-  const [products, setProducts] = useState({
+  const products = useState({
     products: [
       { id: 1, name: "Laptop", price: "200" },
       { id: 2, name: "Mobile", price: "300" },
