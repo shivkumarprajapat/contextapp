@@ -1,12 +1,15 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
+import { ThemeContext } from "../context/ThemeContext";
 
-const ShopProducts = ()=> {
-const myData = useContext(ShopContext)
+const ShopProducts = () => {
+  const myData = useContext(ShopContext)
+  const themecontext =useContext(ThemeContext)
+  console.log(themecontext)
 
-const {products} = myData
-return (
-    <div>
+  const { products } = myData
+  return (
+    <div style={{backgroundColor:themecontext.bgColor,color:themecontext.textColor}}>
       <h1>All Products</h1>
       {products.map((pro) => (
         <div key={pro.id}>
