@@ -30,7 +30,7 @@ const ContactForm = () => {
                 <input type="text" name='phone' className='form-control' placeholder='Enter Phone' value={phone} onChange={setPhone} />
             </div>
             <div className="form-group">
-                <input type="submit" name='phone' className='btn btn-info btn-block' />
+                <input type="submit" name='phone' className='btn btn-info btn-block' value="Add Button"/>
             </div>
         </form>
     )

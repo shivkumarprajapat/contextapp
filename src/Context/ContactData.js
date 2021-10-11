@@ -9,10 +9,17 @@ function ContactDataProvider(props) {
         { id: 3, name: "Jack", email: "jack@gmail.com", phone: "111-222-333-0" }
     ])
     const addContact = (contact) => {
-        setContacts([...contacts, { contact }])
+        setContacts([...contacts, contact])
+    }
+    const removeContact = id => {
+        if(window.confirm("Are you really want to delete this contact ? ")){
+        const filterred = contacts.filter(contact=> contact.id !== id)
+        setContacts(filterred)
+
+        }
     }
     return (
-        <ContactData.Provider value={{ users: contacts, addContact }}>
+        <ContactData.Provider value={{ users: contacts, addContact,removeContact }}>
             {props.children}
         </ContactData.Provider>
     )
