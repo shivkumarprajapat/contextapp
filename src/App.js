@@ -1,11 +1,19 @@
 import React from 'react'
+import Contacts from './components/Contacts'
 import Navbar from './components/Navbar'
+import ContactDataProvider from './Context/ContactData'
 
 const App = () => {
   return (
-    <React.Fragment>
-      <Navbar/>
-    </React.Fragment>
+    <>
+      <Navbar />
+      <div className="container">
+        <ContactDataProvider>
+          <Contacts />
+        </ContactDataProvider>
+
+      </div>
+    </>
   )
 }
 

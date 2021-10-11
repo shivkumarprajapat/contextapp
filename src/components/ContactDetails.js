@@ -1,11 +1,14 @@
 import React from 'react'
 
-const ContactDetails = () => {
+const ContactDetails = ({user}) => {
     return (
-        <div>
-            <h1>ContactDetails</h1>
-        </div>
-    )
+<>
+<td>{user.name}</td>
+<td>{user.email}</td>
+<td>{user.phone}</td>
+<td><a href="/" className='btn btn-danger'>Delete</a></td>
+</>
+        )
 }
 
 export default ContactDetails
