@@ -10,7 +10,7 @@ const ContactForm = () => {
 
     const addNewContact = (e) => {
         e.preventDefault();
-        dispatch({ type:"ADD_CONTACT",newContact: {id: uuidv4(), name: name, email: email, phone: phone} })
+        dispatch({ type: "ADD_CONTACT", newContact: { id: uuidv4(), name: name, email: email, phone: phone } })
         resetName();
         resetEmail();
         resetPhone();
@@ -30,7 +30,7 @@ const ContactForm = () => {
                 <input type="text" name='phone' className='form-control' placeholder='Enter Phone' value={phone} onChange={setPhone} />
             </div>
             <div className="form-group">
-                <input type="submit" name='phone' className='btn btn-info btn-block' value="Add Button"/>
+                <input type="submit" name='phone' className='btn btn-info btn-block' value="Add Button" />
             </div>
         </form>
     )
