@@ -3,14 +3,14 @@ import InputHook from '../Hooks/InputHook'
 import { ContactData } from '../Context/ContactData'
 import { v4 as uuidv4 } from 'uuid';
 const ContactForm = () => {
-    const { addContact } = useContext(ContactData)
+    const { dispatch } = useContext(ContactData)
     const [name, setName, resetName] = InputHook("");
     const [email, setEmail, resetEmail] = InputHook("");
     const [phone, setPhone, resetPhone] = InputHook("");
 
     const addNewContact = (e) => {
         e.preventDefault();
-        addContact({ id: uuidv4(), name: name, email: email, phone: phone })
+        dispatch({ type:"ADD_CONTACT",newContact: {id: uuidv4(), name: name, email: email, phone: phone} })
         resetName();
         resetEmail();
         resetPhone();
